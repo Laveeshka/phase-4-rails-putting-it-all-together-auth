@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # Return a JSON response with the user's ID, username, image URL, and bio; and an HTTP status code of 201 (Created)
   # If the user is not valid:
   # Return a JSON response with the error message, and an HTTP status code of 422 (Unprocessable Entity)
-  def create
+  def create 
     user = User.create!(user_params)
     session[:user_id] = user.id
     render json: user, status: :created
